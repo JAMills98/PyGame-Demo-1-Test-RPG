@@ -105,7 +105,14 @@ pygame.display.set_icon(GAME_ICON)
 # Game Base Values #
 FullScreen          = False
 CheckingVariables   = True
-Game_State          = 1    # 0 = Menus, 1 = World, 2 = Battles
+
+# No error checks here for string I'm lazy
+Game_State          = int(input("What game state do you want (0 = Title, 1 = Game World, 2 = Background) - "))
+if Game_State > 2:
+    Game_State = 2
+elif Game_State < 0:
+    Game_State = 0
+#Game_State          = 1    # 0 = Menus, 1 = World, 2 = Battles
 
 # Character 1 Info
 Char_Index_WorldDetails     = 0
